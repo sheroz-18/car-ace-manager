@@ -107,7 +107,7 @@ function FinancesPage() {
               <XAxis dataKey="d" stroke="#94a3b8" fontSize={12} tickLine={false} axisLine={false} />
               <YAxis stroke="#94a3b8" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(v) => `${Math.round(v / 1000)}k`} />
               <Tooltip contentStyle={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, fontSize: 13 }}
-                formatter={(v: number) => formatMoney(v)} />
+                formatter={(v: any) => formatMoney(Number(v))} />
               <Legend />
               <Line type="monotone" dataKey="income" stroke="#10b981" strokeWidth={2.5} name="Доход" dot={{ r: 3 }} />
               <Line type="monotone" dataKey="expense" stroke="#ef4444" strokeWidth={2.5} name="Расход" dot={{ r: 3 }} />

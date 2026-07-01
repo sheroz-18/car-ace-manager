@@ -91,7 +91,7 @@ function Dashboard() {
                 <Tooltip
                   cursor={{ fill: "rgba(234,88,12,0.06)" }}
                   contentStyle={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 12, fontSize: 13 }}
-                  formatter={(v: number) => [formatMoney(v), "Продажи"]}
+                  formatter={(v: any) => [formatMoney(Number(v)), "Продажи"] as [string, string]}
                 />
                 <Bar dataKey="total" fill="#ea580c" radius={[8, 8, 0, 0]} />
               </BarChart>
