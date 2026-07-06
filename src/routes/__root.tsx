@@ -98,6 +98,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AUTOFLOW — управление магазином автоаксессуаров" },
+      { name: "description", content: "Простая система учёта товаров, продаж, финансов и долгов для магазина автоаксессуаров." },
+      { property: "og:description", content: "Простая система учёта товаров, продаж, финансов и долгов для магазина автоаксессуаров." },
+      { name: "twitter:description", content: "Простая система учёта товаров, продаж, финансов и долгов для магазина автоаксессуаров." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3597537a-abdc-4f1a-9330-743af88fe455/id-preview-0f6b0582--f7947e95-8351-4b0f-81fd-68bae620ae4f.lovable.app-1783349918852.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3597537a-abdc-4f1a-9330-743af88fe455/id-preview-0f6b0582--f7947e95-8351-4b0f-81fd-68bae620ae4f.lovable.app-1783349918852.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
