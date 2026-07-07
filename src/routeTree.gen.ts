@@ -14,6 +14,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedWarehouseRouteImport } from './routes/_authenticated/warehouse'
 import { Route as AuthenticatedSalesRouteImport } from './routes/_authenticated/sales'
+import { Route as AuthenticatedReturnsRouteImport } from './routes/_authenticated/returns'
 import { Route as AuthenticatedProductsRouteImport } from './routes/_authenticated/products'
 import { Route as AuthenticatedFinancesRouteImport } from './routes/_authenticated/finances'
 import { Route as AuthenticatedDebtsRouteImport } from './routes/_authenticated/debts'
@@ -41,6 +42,11 @@ const AuthenticatedWarehouseRoute = AuthenticatedWarehouseRouteImport.update({
 const AuthenticatedSalesRoute = AuthenticatedSalesRouteImport.update({
   id: '/sales',
   path: '/sales',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedReturnsRoute = AuthenticatedReturnsRouteImport.update({
+  id: '/returns',
+  path: '/returns',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const AuthenticatedProductsRoute = AuthenticatedProductsRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/debts': typeof AuthenticatedDebtsRoute
   '/finances': typeof AuthenticatedFinancesRoute
   '/products': typeof AuthenticatedProductsRoute
+  '/returns': typeof AuthenticatedReturnsRoute
   '/sales': typeof AuthenticatedSalesRoute
   '/warehouse': typeof AuthenticatedWarehouseRoute
 }
@@ -81,6 +88,7 @@ export interface FileRoutesByTo {
   '/debts': typeof AuthenticatedDebtsRoute
   '/finances': typeof AuthenticatedFinancesRoute
   '/products': typeof AuthenticatedProductsRoute
+  '/returns': typeof AuthenticatedReturnsRoute
   '/sales': typeof AuthenticatedSalesRoute
   '/warehouse': typeof AuthenticatedWarehouseRoute
 }
@@ -93,6 +101,7 @@ export interface FileRoutesById {
   '/_authenticated/debts': typeof AuthenticatedDebtsRoute
   '/_authenticated/finances': typeof AuthenticatedFinancesRoute
   '/_authenticated/products': typeof AuthenticatedProductsRoute
+  '/_authenticated/returns': typeof AuthenticatedReturnsRoute
   '/_authenticated/sales': typeof AuthenticatedSalesRoute
   '/_authenticated/warehouse': typeof AuthenticatedWarehouseRoute
 }
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/debts'
     | '/finances'
     | '/products'
+    | '/returns'
     | '/sales'
     | '/warehouse'
   fileRoutesByTo: FileRoutesByTo
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
     | '/debts'
     | '/finances'
     | '/products'
+    | '/returns'
     | '/sales'
     | '/warehouse'
   id:
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '/_authenticated/debts'
     | '/_authenticated/finances'
     | '/_authenticated/products'
+    | '/_authenticated/returns'
     | '/_authenticated/sales'
     | '/_authenticated/warehouse'
   fileRoutesById: FileRoutesById
@@ -173,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedSalesRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/returns': {
+      id: '/_authenticated/returns'
+      path: '/returns'
+      fullPath: '/returns'
+      preLoaderRoute: typeof AuthenticatedReturnsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/products': {
       id: '/_authenticated/products'
       path: '/products'
@@ -209,6 +228,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedDebtsRoute: typeof AuthenticatedDebtsRoute
   AuthenticatedFinancesRoute: typeof AuthenticatedFinancesRoute
   AuthenticatedProductsRoute: typeof AuthenticatedProductsRoute
+  AuthenticatedReturnsRoute: typeof AuthenticatedReturnsRoute
   AuthenticatedSalesRoute: typeof AuthenticatedSalesRoute
   AuthenticatedWarehouseRoute: typeof AuthenticatedWarehouseRoute
 }
@@ -218,6 +238,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedDebtsRoute: AuthenticatedDebtsRoute,
   AuthenticatedFinancesRoute: AuthenticatedFinancesRoute,
   AuthenticatedProductsRoute: AuthenticatedProductsRoute,
+  AuthenticatedReturnsRoute: AuthenticatedReturnsRoute,
   AuthenticatedSalesRoute: AuthenticatedSalesRoute,
   AuthenticatedWarehouseRoute: AuthenticatedWarehouseRoute,
 }
