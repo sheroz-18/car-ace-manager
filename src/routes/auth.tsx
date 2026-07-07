@@ -103,9 +103,9 @@ function AuthPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="pass-up">Пароль</Label>
-                  <Input id="pass-up" type="password" required minLength={4} value={password}
+                  <Input id="pass-up" type="password" required minLength={6} value={password}
                     onChange={(e) => setPassword(e.target.value)} />
-                  <p className="text-xs text-muted-foreground">Минимум 4 символа</p>
+                  <p className="text-xs text-muted-foreground">Минимум 6 символов — без спецсимволов и заглавных</p>
                 </div>
                 <Button type="submit" className="w-full h-11" disabled={loading}>
                   {loading && <Loader2 className="size-4 animate-spin mr-2" />}
