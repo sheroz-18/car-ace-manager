@@ -1,5 +1,5 @@
 import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
-import { LayoutDashboard, Package, TrendingUp, Wallet, HandCoins, Warehouse, LogOut } from "lucide-react";
+import { LayoutDashboard, Package, TrendingUp, Wallet, HandCoins, Warehouse, Undo2, LogOut } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
@@ -8,6 +8,7 @@ const nav = [
   { to: "/dashboard", label: "Дашборд", icon: LayoutDashboard },
   { to: "/products", label: "Товары", icon: Package },
   { to: "/sales", label: "Продажи", icon: TrendingUp },
+  { to: "/returns", label: "Возвраты", icon: Undo2 },
   { to: "/finances", label: "Финансы", icon: Wallet },
   { to: "/debts", label: "Долги", icon: HandCoins },
   { to: "/warehouse", label: "Склад", icon: Warehouse },
