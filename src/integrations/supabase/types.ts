@@ -190,6 +190,60 @@ export type Database = {
         }
         Relationships: []
       }
+      returns: {
+        Row: {
+          created_at: string
+          created_by: string
+          id: string
+          product_id: string
+          quantity: number
+          reason: string | null
+          refund_amount: number
+          returned_at: string
+          sale_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          created_by: string
+          id?: string
+          product_id: string
+          quantity: number
+          reason?: string | null
+          refund_amount?: number
+          returned_at?: string
+          sale_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string
+          id?: string
+          product_id?: string
+          quantity?: number
+          reason?: string | null
+          refund_amount?: number
+          returned_at?: string
+          sale_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "returns_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "returns_sale_id_fkey"
+            columns: ["sale_id"]
+            isOneToOne: false
+            referencedRelation: "sales"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       sales: {
         Row: {
           created_at: string
