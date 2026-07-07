@@ -79,7 +79,7 @@ function AuthPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="pass-in">Пароль</Label>
-                  <Input id="pass-in" type="password" required minLength={6} value={password}
+                  <Input id="pass-in" type="password" required minLength={4} value={password}
                     onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <Button type="submit" className="w-full h-11" disabled={loading}>
